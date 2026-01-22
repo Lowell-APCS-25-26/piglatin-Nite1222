@@ -6,7 +6,7 @@ public class PigLatin {
         //postcondition: returns the position of the first vowel in sWord.  If there are no vowels, returns -1
 	    if(sWord.length()>0){
 			for(int i=0; i<sWord.length();i++){
-				if(sWord.substring(i,i+1).equals("a") || sWord.substring(i,i+1).equals("e") || sWord.substring(i,i+1).equals("i") || sWord.substring(i,i+1).equals("o") || sWord.substring(i,i+1).equals("u") || ){
+				if(sWord.substring(i,i+1).equals("a") || sWord.substring(i,i+1).equals("e") || sWord.substring(i,i+1).equals("i") || sWord.substring(i,i+1).equals("o") || sWord.substring(i,i+1).equals("u")){
 					return i;
 				}
 			}
@@ -33,7 +33,7 @@ public class PigLatin {
 			else if(sWord.substring(0,2).equals("qu")){
 				return sWord.substring(2, sWord.length())+"quay";
 			}
-			return sWord.substring(1,sWord.length())+sWord.substring(0,1)+"ay";
+			return sWord.substring(findfirstVowel(sWord),sWord.length())+sWord.substring(0,findfirstVowel(sWord))+"ay";
 		}
         return null;
     }

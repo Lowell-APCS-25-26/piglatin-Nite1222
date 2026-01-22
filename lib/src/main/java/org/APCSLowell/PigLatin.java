@@ -24,17 +24,20 @@ public class PigLatin {
 				allConsonants=false;
 				}
 			}
-			if(allConsonants=true){
+			if(allConsonants==true){
 				return sWord+"ay";
 			}
 			else if(sWord.substring(0,1).equals("a") || sWord.substring(0,1).equals("e") || sWord.substring(0,1).equals("i") || sWord.substring(0,1).equals("o") || sWord.substring(0,1).equals("u") ){
 				return sWord+"way";
 			}
 			else if(sWord.substring(0,2).equals("qu")){
-				return sWord.substring(2, sWord.length())+"quay";
+				return sWord.substring(2)+"quay";
 			}
-			return sWord.substring(findfirstVowel(sWord),sWord.length())+sWord.substring(0,findfirstVowel(sWord))+"ay";
+			else{
+			return sWord.substring(findFirstVowel(sWord))+sWord.substring(0,findFirstVowel(sWord))+"ay";
+			}
 		}
-        return null;
+		return null;
+		
     }
 }
